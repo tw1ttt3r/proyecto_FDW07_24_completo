@@ -1,0 +1,14 @@
+#modal_bienvenida {
+    position: absolute;
+    width: 250px;
+    height: 35px;
+    display: none;
+    background-color: azure;
+    color: black;
+}
+
+#productos {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
