@@ -44,6 +44,10 @@ class Tienda {
         for (let e of productosElementos) {
             elemento.appendChild(e)
         }
+    }
 
+    buscarProductoXId(id_producto) {
+        const productoBuscado = this.productos.filter((producto) => producto.getId() === id_producto);
+        return productoBuscado[0];
     }
 }

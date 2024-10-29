@@ -22,8 +22,32 @@ class Carrito {
 
     quitarProducto() {}
 
-    mostrarProductos() {
-        console.log(this.productos)
+    mostrarProductos(tienda) {
+        const detalle = this.productos.reduce((acumulador, detalle) => {
+            const producto = tienda.buscarProductoXId(detalle.producto);
+            const container = document.createElement("div");
+            const nombre = document.createElement("p");
+            nombre.textContent = producto.getNombre();
+            const img = document.createElement("img");
+            img.src = producto.getImage(producto.getId());
+            img.alt = `producto_${producto.getNombre()}`;
+            const precio = document.createElement("p");
+            precio.textContent = producto.getPrecio();
+            const cantidad = document.createElement("p");
+            cantidad.textContent = detalle.cantidad;
+            const total = document.createElement("p");
+            total.textContent = (detalle.cantidad * producto.getPrecio());
+            container.appendChild(nombre);
+            container.appendChild(img);
+            container.appendChild(precio);
+            container.appendChild(cantidad);
+            container.appendChild(total);
+            container.style.display = 'flex';
+            container.style.gap = '4px';
+            container.style.justifyContent = 'space-around';
+            return [ ...acumulador, container ];
+        }, []);
+        return detalle;
     }
 
     pagar() {}

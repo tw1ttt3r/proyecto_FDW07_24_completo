@@ -2,9 +2,9 @@ header {
     margin-bottom: 16px;
 }
 
-#modal_bienvenida {
+#modal_bienvenida, #modal_carrito {
     position: absolute;
-    width: 250px;
+    width: 100%;
     height: 35px;
     display: none;
     background-color: azure;
