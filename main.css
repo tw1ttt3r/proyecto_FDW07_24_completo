@@ -1,3 +1,7 @@
+header {
+    margin-bottom: 16px;
+}
+
 #modal_bienvenida {
     position: absolute;
     width: 250px;
